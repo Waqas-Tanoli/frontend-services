@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+:root,
+[data-theme='light'] {
+  --background: 0 0% 100% /* hsl(0, 0%, 100%); */;
+  --foreground: 180 41% 10% /* hsl(180, 41%, 10%); */;
+
+  /* Primary */
+  --primary--1: 180 41% 10% /* hsl(180, 41%, 10%); */;
+  --primary--2: 178 28% 19% /* hsl(178, 28%, 19%); */;
+  --primary--3: 178 32% 22% /* hsl(178, 32%, 22%); */;
+  --primary--4: 177 35% 26% /* hsl(177, 35%, 26%); */;
+  --primary--5: 176 39% 32% /* hsl(176, 39%, 32%); */;
+  --primary--6: 175 37% 40% /* hsl(175, 37%, 40%); */;
+  --primary--7: 175 30% 50% /* hsl(175, 30%, 50%); */;
+  --primary--8: 172 36% 64% /* hsl(172, 36%, 64%); */;
+  --primary--9: 170 39% 78% /* hsl(170, 39%, 78%); */;
+  --primary--10: 169 40% 84% /* hsl(169, 40%, 84%); */;
+  --primary--11: 163 41% 97% /* hsl(163, 41%, 97%); */;
+  --primary-foreground: 0 0% 100% /* hsl(0, 0%, 100%); */;
+
+  /* Accent */
+  --accent: 262 55% 58% /* hsl(262, 55%, 58%) */;
+  --accent-foreground: 0 0% 100% /* hsl(0, 0%, 100%); */;
+
+  /* Secondary */
+  --secondary--1: 0 0% 60% /* hsl(0, 0%, 60%); */;
+  --secondary--2: 0 0% 74% /* hsl(0, 0%, 74%); */;
+  --secondary--3: 0 0% 86% /* hsl(0, 0%, 86%); */;
+  --secondary--4: 0 0% 94% /* hsl(0, 0%, 94%); */;
+  --secondary--5: 0 0% 97% /* hsl(0, 0%, 97%); */;
+  --secondary-foreground: 180 41% 10% /* hsl(180, 41%, 10%); */;
+
+  /* Muted */
+  --muted: 210 7% 56% /* hsl(210, 7%, 56%); */;
+  --muted-foreground: 0 0% 60% /* hsl(0, 0%, 60%); */;
+
+  /* Input */
+  --input: 0 0% 86% /* hsl(0, 0%, 86%); */;
+
+  /* Border */
+  --border: 0 0% 86% /* hsl(0, 0%, 86%); */;
+
+  /* Success */
+  --success: 83 82% 43% /* hsl(83, 82%, 43%); */;
+  --success-foreground: 0 0% 100% /* hsl(0, 0%, 100%); */;
+
+  /* Destructive */
+  --destructive: 0 74% 50% /* hsl(0, 74%, 50%); */;
+  --destructive-foreground: 0 0% 100% /* hsl(0, 0%, 100%); */;
+
+  /* Warning */
+  --warning: 34 83% 51% /* hsl(34, 83%, 51%); */;
+  --warning-foreground: 0 0% 100% /* hsl(0, 0%, 100%); */;
+
+  /* Info */
+  --info: 195 100% 39% /* hsl(195, 100%, 39%); */;
+  --info-foreground: 0 0% 100% /* hsl(0, 0%, 100%); */;
+}
+
+@layer base {
+  :root {
+    @apply bg-background;
+  }
+
+  body {
+    @apply font-red-hat-display text-base text-foreground;
+  }
+}
+
+@layer components {
+  .root-container {
+    @apply mx-auto max-w-[1440px] px-6 md:px-10;
+  }
+}
+/* 🌈 Hide default cursor globally */
+* {
+  cursor: none !important;
+}
+
+/* 🌸 Main custom cursor dot */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, #60a5fa 0%, #8b5cf6 60%, #a855f7 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  z-index: 9999;
+  transition: transform 0.08s ease-out;
+}
+
+/* 💫 Soft glowing halo */
+.custom-cursor::after {
+  content: '';
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: radial-gradient(circle, rgba(96,165,250,0.25), rgba(139,92,246,0.2), rgba(168,85,247,0.1));
+  border-radius: 50%;
+  filter: blur(12px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* ✨ Hover enlarge effect */
+a:hover ~ .custom-cursor,
+button:hover ~ .custom-cursor {
+  transform: scale(1.8);
+  transition: transform 0.15s ease-out;
+}
