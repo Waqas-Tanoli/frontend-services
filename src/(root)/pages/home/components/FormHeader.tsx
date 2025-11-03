@@ -24,11 +24,20 @@ export const FormHeader = () => {
 
       <div className="space-y-4 text-slate-700">
         <p className="font-serif text-lg leading-relaxed">
-          <strong className="font-semibold text-slate-800">Modern systemic barriers persist in contemporary forms.</strong> Traditional assessment models frequently disadvantage women and communities of color, perpetuating housing inequality. Our machine learning platform redefines this paradigm.
+          <strong className="font-semibold text-slate-800">
+            Modern systemic barriers persist in contemporary forms.
+          </strong>{' '}
+          Traditional assessment models frequently disadvantage women and
+          communities of color, perpetuating housing inequality. Our machine
+          learning platform redefines this paradigm.
         </p>
 
         <p className="font-serif text-lg leading-relaxed">
-          <strong className="font-semibold text-slate-800">Complete anonymity ensures privacy</strong> while contributing to our mission of creating equitable, bias-free housing solutions for all communities.
+          <strong className="font-semibold text-slate-800">
+            Complete anonymity ensures privacy
+          </strong>{' '}
+          while contributing to our mission of creating equitable, bias-free
+          housing solutions for all communities.
         </p>
       </div>
     </MotionCard>

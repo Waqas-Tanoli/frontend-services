@@ -1,4 +1,3 @@
-
 'use client';
 
 import { motion } from 'framer-motion';
@@ -10,16 +9,16 @@ export const Hero = () => {
       <div className="absolute inset-0 ">
         {/* Main Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-100/40 via-blue-100/60 to-purple-100/50" />
-        
+
         {/* Grid Pattern */}
-        <div 
+        <div
           className="absolute inset-0 opacity-20"
           style={{
             backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)`,
-            backgroundSize: '50px 50px'
+            backgroundSize: '50px 50px',
           }}
         />
-        
+
         {/* Animated Dots */}
         <div className="absolute inset-0">
           {[...Array(15)].map((_, i) => (
@@ -27,7 +26,7 @@ export const Hero = () => {
               key={i}
               className="absolute w-2 h-2 bg-blue-300 rounded-full opacity-40"
               style={{
-                left: `${15 + (i * 6)}%`,
+                left: `${15 + i * 6}%`,
                 top: `${40 + Math.sin(i) * 30}%`,
               }}
               animate={{
@@ -63,7 +62,6 @@ export const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 min-h-screen flex items-center m-10">
         <div className="max-w-4xl mx-auto text-center">
-          
           {/* Trusted By Badge */}
           <motion.div
             className="inline-flex items-center px-6 py-3 rounded-full bg-white/80 backdrop-blur-sm border border-blue-200 mb-8 shadow-sm"
@@ -72,7 +70,9 @@ export const Hero = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="w-2 h-2 bg-blue-500 rounded-full mr-3 animate-pulse"></div>
-            <span className="text-blue-600 text-lg font-semibold">TRUSTED BY LEADING COMPANIES</span>
+            <span className="text-blue-600 text-lg font-semibold">
+              TRUSTED BY LEADING COMPANIES
+            </span>
           </motion.div>
 
           {/* Main Heading */}
@@ -96,8 +96,8 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Transform your business with cutting-edge artificial intelligence solutions. 
-            Smart, fast, and incredibly powerful.
+            Transform your business with cutting-edge artificial intelligence
+            solutions. Smart, fast, and incredibly powerful.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -128,8 +128,13 @@ export const Hero = () => {
               { number: '50k+', label: 'Models' },
               { number: '24/7', label: 'Support' },
             ].map((stat, index) => (
-              <div key={index} className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-slate-200">
-                <div className="text-2xl font-bold text-blue-500 mb-1">{stat.number}</div>
+              <div
+                key={index}
+                className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-slate-200"
+              >
+                <div className="text-2xl font-bold text-blue-500 mb-1">
+                  {stat.number}
+                </div>
                 <div className="text-slate-600 text-sm">{stat.label}</div>
               </div>
             ))}

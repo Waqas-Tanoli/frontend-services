@@ -7,11 +7,31 @@ export const ProductsDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const products = [
-    { name: "DocFlow", description: "Document Automation Platform", color: "text-blue-600" },
-    { name: "OneLearn", description: "Learning Management System", color: "text-green-600" },
-    { name: "Connect", description: "Donation Management Hub", color: "text-purple-600" },
-    { name: "Donor Hub", description: "Donor Management System", color: "text-orange-600" },
-    { name: "Cursus", description: "Workforce & Asset Management", color: "text-pink-600" }
+    {
+      name: 'DocFlow',
+      description: 'Document Automation Platform',
+      color: 'text-blue-600',
+    },
+    {
+      name: 'OneLearn',
+      description: 'Learning Management System',
+      color: 'text-green-600',
+    },
+    {
+      name: 'Connect',
+      description: 'Donation Management Hub',
+      color: 'text-purple-600',
+    },
+    {
+      name: 'Donor Hub',
+      description: 'Donor Management System',
+      color: 'text-orange-600',
+    },
+    {
+      name: 'Cursus',
+      description: 'Workforce & Asset Management',
+      color: 'text-pink-600',
+    },
   ];
 
   return (

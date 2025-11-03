@@ -24,7 +24,10 @@ export const ProductsDropdown = () => {
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className={`w-80 ${urbanist.className}`} align="end">
+      <DropdownMenuContent
+        className={`w-80 ${urbanist.className}`}
+        align="end"
+      >
         <NavLink href={linkFactory.root.getRiskFormPage()}>
           {({ isActive }) => (
             <DropdownMenuItem
