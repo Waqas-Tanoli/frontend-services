@@ -230,7 +230,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           {/* Button */}
           <div className="hidden md:block">
             <Link
-              href="/contact"
+              href="/ContactSection"
               className={`rounded-lg border-2 px-6 py-3 text-sm font-semibold shadow-md transition-all duration-150 hover:scale-105 ${
                 inHero ?
                   'border-white text-white hover:bg-white hover:text-black'
