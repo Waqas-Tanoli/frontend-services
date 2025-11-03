@@ -10,20 +10,23 @@ const MotionCard = motion(Card);
 
 export const AboutHempstead = () => {
   return (
-    <div className="relative bg-gradient-to-br from-white via-blue-50 to-cyan-50 py-10 px-5 overflow-hidden">
+    <div className="relative overflow-hidden bg-gradient-to-br from-white via-blue-50 to-cyan-50 px-5 py-10">
       {/* AI-themed floating particles background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-10 left-10 w-2 h-2 bg-cyan-400 rounded-full animate-pulse opacity-60"></div>
-        <div className="absolute top-20 right-20 w-1 h-1 bg-blue-400 rounded-full animate-bounce opacity-50"></div>
-        <div className="absolute bottom-20 left-1/4 w-3 h-3 bg-purple-300 rounded-full animate-ping opacity-40"></div>
-        <div className="absolute bottom-10 right-1/3 w-2 h-2 bg-cyan-500 rounded-full animate-pulse opacity-70"></div>
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-10 top-10 size-2 animate-pulse rounded-full bg-cyan-400 opacity-60"></div>
+        <div className="absolute right-20 top-20 size-1 animate-bounce rounded-full bg-blue-400 opacity-50"></div>
+        <div className="absolute bottom-20 left-1/4 size-3 animate-ping rounded-full bg-purple-300 opacity-40"></div>
+        <div className="absolute bottom-10 right-1/3 size-2 animate-pulse rounded-full bg-cyan-500 opacity-70"></div>
       </div>
 
       <motion.h1
-        className="mb-10 text-center text-6xl font-luxury font-bold bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 bg-clip-text text-transparent md:text-9xl"
+        className="mb-10 bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 bg-clip-text text-center text-6xl font-bold text-transparent md:text-9xl"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        whileHover={{ scale: 1.05, textShadow: '0 0 20px rgba(0, 255, 255, 0.5)' }}
+        whileHover={{
+          scale: 1.05,
+          textShadow: '0 0 20px rgba(0, 255, 255, 0.5)',
+        }}
         transition={{
           duration: 0.5,
           easings: ['easeOut'],
@@ -43,9 +46,9 @@ export const AboutHempstead = () => {
         />
       </motion.h1>
 
-      <div className="space-y-5 max-w-4xl mx-auto">
+      <div className="mx-auto max-w-4xl space-y-5">
         <MotionCard
-          className="border-2 border-blue-200 bg-white/80 backdrop-blur-sm text-gray-800 text-lg font-medium md:text-xl shadow-lg rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-300/50 hover:scale-105 hover:border-cyan-400"
+          className="rounded-xl border-2 border-blue-200 bg-white/80 text-lg font-medium text-gray-800 shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-cyan-400 hover:shadow-2xl hover:shadow-cyan-300/50 md:text-xl"
           initial={{
             y: 50,
             opacity: 0,
@@ -60,11 +63,11 @@ export const AboutHempstead = () => {
             easings: ['easeOut'],
           }}
         >
-          At Liiv, we’re eliminating racial bias and redlining in housing.
+          At Liiv, we&apos;re eliminating racial bias and redlining in housing.
         </MotionCard>
 
         <MotionCard
-          className="border-2 border-blue-200 bg-white/80 backdrop-blur-sm text-gray-800 text-lg font-medium md:text-xl shadow-lg rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-300/50 hover:scale-105 hover:border-cyan-400"
+          className="rounded-xl border-2 border-blue-200 bg-white/80 text-lg font-medium text-gray-800 shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-cyan-400 hover:shadow-2xl hover:shadow-cyan-300/50 md:text-xl"
           initial={{
             y: 50,
             opacity: 0,
@@ -84,8 +87,8 @@ export const AboutHempstead = () => {
           logistic regression and ensemble learning. In our analysis, two
           applicants with identical risk scores—one with a 740+ credit score but
           low income, the other with a 300–579 score but high income—showed the
-          same rental risk. This proves that credit scores don’t reflect true
-          rental reliability—and too often serve as a proxy for systemic
+          same rental risk. This proves that credit scores don&apos;t reflect
+          true rental reliability—and too often serve as a proxy for systemic
           exclusion.
         </MotionCard>
       </div>

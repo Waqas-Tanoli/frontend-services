@@ -64,49 +64,52 @@ export const RiskForm = () => {
 
   return (
     <>
-      {isLoading || !!newHempsteadRiskScore ? (
-        <Card className="border-2   border-blue-200 bg-white/90 backdrop-blur-sm text-gray-800 shadow-lg rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-blue-300/50 hover:scale-105 hover:border-blue-400">
+      {isLoading || !!newHempsteadRiskScore ?
+        <Card className="rounded-xl border-2 border-blue-200 bg-white/90 text-gray-800 shadow-lg shadow-blue-300/50 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-blue-400 hover:shadow-2xl">
           <CardHeader>
-            <CardTitle className="text-xl font-luxury text-cyan-600">Your risk score is</CardTitle>
+            <CardTitle className="text-xl text-cyan-600">
+              Your risk score is
+            </CardTitle>
           </CardHeader>
 
           <div className="flex justify-center">
-            {isLoading ? (
+            {isLoading ?
               <LoaderCircle
                 className="animate-spin text-cyan-500"
                 size={40}
               />
-            ) : (
-              <motion.span
-                className="text-7xl font-luxury font-bold bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 bg-clip-text text-transparent"
+            : <motion.span
+                className="bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 bg-clip-text text-7xl font-bold text-transparent"
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
-                whileHover={{ scale: 1.1, textShadow: '0 0 20px rgba(0, 255, 255, 0.8)' }}
+                whileHover={{
+                  scale: 1.1,
+                  textShadow: '0 0 20px rgba(0, 255, 255, 0.8)',
+                }}
                 transition={{ duration: 0.5 }}
               >
                 {newHempsteadRiskScore?.risk_score}
               </motion.span>
-            )}
+            }
           </div>
 
           <CardFooter>
             <Button
               onClick={resetForm}
-              className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold hover:opacity-90 hover:shadow-lg hover:shadow-cyan-300/50 transition-all duration-300 animate-pulse"
+              className="animate-pulse bg-gradient-to-r from-cyan-500 to-blue-600 font-semibold text-white shadow-lg shadow-cyan-300/50 transition-all duration-300 hover:opacity-90"
             >
               Try again
             </Button>
           </CardFooter>
         </Card>
-      ) : (
-        <form
+      : <form
           className="space-y-5"
           onSubmit={form.handleSubmit(onValid, onInvalid)}
         >
           {QUESTIONS.map((question, index) => (
             <MotionCard
               key={question.field}
-              className="border-2 border-blue-200 bg-white/80 backdrop-blur-sm text-gray-800 shadow-lg rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-300/50 hover:scale-105 hover:border-cyan-400"
+              className="rounded-xl border-2 border-blue-200 bg-white/80 text-gray-800 shadow-lg shadow-cyan-300/50 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-cyan-400 hover:shadow-2xl"
               initial={{
                 y: 50,
                 opacity: 0,
@@ -123,7 +126,7 @@ export const RiskForm = () => {
               }}
             >
               <CardHeader>
-                <CardTitle className="font-luxury text-cyan-600">
+                <CardTitle className="text-cyan-600">
                   {question.title}
                   <span className="text-red-400">*</span>
                 </CardTitle>
@@ -143,9 +146,9 @@ export const RiskForm = () => {
                             className={cn(
                               buttonVariants({
                                 variant: isChecked ? 'default' : 'outline',
-                                className: 'pointer bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:opacity-90 hover:shadow-lg hover:shadow-cyan-300/50 transition-all duration-300',
+                                className:
+                                  'pointer bg-gradient-to-r from-cyan-500 to-blue-600 font-semibold text-white shadow-lg shadow-cyan-300/50 transition-all duration-300 hover:opacity-90',
                               }),
-                              'pointer',
                             )}
                           >
                             <input
@@ -169,12 +172,12 @@ export const RiskForm = () => {
 
           <Button
             type="submit"
-            className="bg-gradient-to-r from-cyan-500 m-10 to-blue-600 text-white font-semibold hover:opacity-90 hover:shadow-lg hover:shadow-cyan-300/50 transition-all duration-300 animate-pulse"
+            className="m-10 animate-pulse bg-gradient-to-r from-cyan-500 to-blue-600 font-semibold text-white shadow-lg shadow-cyan-300/50 transition-all duration-300 hover:opacity-90"
           >
             Submit
           </Button>
         </form>
-      )}
+      }
     </>
   );
 };

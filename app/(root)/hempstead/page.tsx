@@ -23,7 +23,7 @@ export default function RiskFormPage() {
         aria-hidden
       />
 
-      <div className="relative self-start xl:flex xl:flex-col xl:justify-center my-10">
+      <div className="relative my-10 self-start xl:flex xl:flex-col xl:justify-center">
         <FormHeader />
 
         <RiskForm />

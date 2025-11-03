@@ -5,12 +5,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import { useEffect } from 'react';
 
-import { HeroNew } from '@/src/(root)/pages/home/components/HeroNew';
-import { TrustedBySection } from '@/src/(root)/pages/home/components/TrustedBySection';
-import { SuccessStories } from '@/src/(root)/pages/home/components/SuccessStories';
-import { ProductsSection } from '@/src/(root)/pages/home/components/ProductsSection';
 import { AboutSection } from '@/src/(root)/pages/home/components/AboutSection';
 import { ContactSection } from '@/src/(root)/pages/home/components/ContactSection';
+import { HeroNew } from '@/src/(root)/pages/home/components/HeroNew';
+import { ProductsSection } from '@/src/(root)/pages/home/components/ProductsSection';
+import { SuccessStories } from '@/src/(root)/pages/home/components/SuccessStories';
+import { TrustedBySection } from '@/src/(root)/pages/home/components/TrustedBySection';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,7 +32,6 @@ export default function Home() {
       <ProductsSection />
       <AboutSection />
       <ContactSection />
-      
     </div>
   );
 }

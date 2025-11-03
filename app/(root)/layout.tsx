@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
+
 import { MobileNavigation } from '@/src/(root)/components/MobileNavigation';
 import { linkFactory } from '@/src/shared/constants/linkFactory';
 import { urbanist } from '@/src/shared/fonts';
@@ -25,7 +26,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         setInHero(inHeroSection);
         setCursorColor(inHeroSection ? '#fff' : '#1967d2');
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     observer.observe(hero);
@@ -49,7 +50,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     const handleUnhover = () => cursor.classList.remove('hovered');
 
     window.addEventListener('mousemove', moveCursor);
-    
+
     // Add hover effects to interactive elements
     const addHoverEffects = () => {
       document.querySelectorAll('a, button, .interactive').forEach((el) => {
@@ -60,7 +61,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
 
     // Initial setup
     addHoverEffects();
-    
+
     // Update periodically for dynamic content
     const interval = setInterval(addHoverEffects, 1000);
 
@@ -85,20 +86,16 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     }
   }, [cursorColor]);
 
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <div className="box-border grid min-h-screen grid-cols-1 grid-rows-[auto_1fr] relative overflow-x-hidden">
+    <div className="relative box-border grid min-h-screen grid-cols-1 grid-rows-[auto_1fr] overflow-x-hidden">
       {/* ✅ Global Styles */}
-      <style jsx global>{`
+      <style
+        jsx
+        global
+      >{`
         /* Import Modern Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-        
+
         /* Hide default cursor */
         @media (min-width: 768px) {
           * {
@@ -118,7 +115,9 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           pointer-events: none;
           transform: translate(-50%, -50%);
           z-index: 9999;
-          transition: transform 0.08s ease, background 0.1s linear;
+          transition:
+            transform 0.08s ease,
+            background 0.1s linear;
         }
 
         .custom-cursor.hovered {
@@ -136,14 +135,6 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           * {
             cursor: auto !important;
           }
-        }
-
-        /* Logo color */
-        .logo-dark {
-          filter: brightness(0) invert(1);
-        }
-        .logo-light {
-          filter: brightness(0) invert(0);
         }
 
         /* Button hover animation */
@@ -201,27 +192,34 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           color: inHero ? '#fff' : '#000',
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 flex h-20 items-center justify-between">
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
           {/* Logo */}
           <Link
             href={linkFactory.root.getHomePage()}
-            className="flex items-center gap-2 interactive"
+            className="flex cursor-pointer items-center gap-2"
           >
-            <div className={`${inHero ? 'logo-dark' : 'logo-light'}`}>
+            <div
+              style={{
+                filter:
+                  inHero ?
+                    'brightness(0) invert(1)'
+                  : 'brightness(0) invert(0)',
+              }}
+            >
               <LiivLogo />
             </div>
           </Link>
 
           {/* Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden items-center gap-8 md:flex">
             {['Platforms', 'Careers', 'About', 'Solutions'].map((label) => (
               <a
                 key={label}
                 href={`#${label.toLowerCase()}`}
-                className={`nav-item text-sm font-medium ${
-                  inHero
-                    ? 'text-white hover:text-blue-300'
-                    : 'text-black hover:text-[#1967D2]'
+                className={`font-['Space_Grotesk'] text-sm font-medium ${
+                  inHero ?
+                    'text-white hover:text-blue-300'
+                  : 'text-black hover:text-[#1967D2]'
                 }`}
               >
                 {label}
@@ -233,10 +231,10 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           <div className="hidden md:block">
             <Link
               href="/contact"
-              className={`demo-btn px-6 py-3 text-sm font-semibold rounded-lg shadow-md border-2 ${
-                inHero
-                  ? 'text-white border-white hover:bg-white hover:text-black'
-                  : 'text-black border-black hover:bg-black hover:text-white'
+              className={`rounded-lg border-2 px-6 py-3 text-sm font-semibold shadow-md transition-all duration-150 hover:scale-105 ${
+                inHero ?
+                  'border-white text-white hover:bg-white hover:text-black'
+                : 'border-black text-black hover:bg-black hover:text-white'
               }`}
             >
               <span>GET STARTED</span>

@@ -18,7 +18,7 @@ export const RootLayoutActions = () => {
     if (contactSection) {
       contactSection.scrollIntoView({
         behavior: 'smooth',
-        block: 'start'
+        block: 'start',
       });
     }
   };
@@ -32,14 +32,14 @@ export const RootLayoutActions = () => {
               linkFactory.tenant.getRentPage()
             : linkFactory.manager.getDashboardPage()
           }
-          className="bg-white text-blue-900 hover:bg-blue-100 px-6 py-2.5 rounded-lg font-semibold transition-all duration-200 shadow-md hover:shadow-lg"
+          className="rounded-lg bg-white px-6 py-2.5 font-semibold text-blue-900 shadow-md transition-all duration-200 hover:bg-blue-100 hover:shadow-lg"
         >
           Dashboard
         </Link>
 
         <button
           onClick={() => logout()}
-          className="border border-white text-white hover:bg-white hover:text-blue-900 px-6 py-2.5 rounded-lg font-semibold transition-all duration-200"
+          className="rounded-lg border border-white px-6 py-2.5 font-semibold text-white transition-all duration-200 hover:bg-white hover:text-blue-900"
         >
           Log out
         </button>
@@ -53,7 +53,7 @@ export const RootLayoutActions = () => {
 
       <button
         onClick={scrollToContact}
-        className="bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700 text-white px-6 py-2.5 rounded-lg font-semibold transition-all duration-200 shadow-md hover:shadow-lg"
+        className="rounded-lg bg-gradient-to-r from-blue-400 to-blue-600 px-6 py-2.5 font-semibold text-white shadow-md transition-all duration-200 hover:from-blue-500 hover:to-blue-700 hover:shadow-lg"
       >
         Request a demo
       </button>
